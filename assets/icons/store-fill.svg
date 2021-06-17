@@ -1,0 +1,47 @@
+<svg
+   width="25"
+   height="24"
+   viewBox="0 0 25 24"
+   fill="none"
+   xmlns="http://www.w3.org/2000/svg">
+  <path
+     d="m 4.2050205,11.278526 v 4.153285 c 0,4.153185 1.6654761,5.818189 5.8199175,5.818189 h 4.987213 c 4.154363,0 5.819839,-1.665004 5.819839,-5.818189 v -4.153285"
+     stroke="#292d32"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path243"
+     style="fill:none;stroke:#113366;stroke-opacity:1" />
+  <path
+     d="m 12.523141,12.000017 c 1.693245,0 2.942352,-1.378246 2.775805,-3.0709996 l -0.610675,-6.179017 h -4.321 L 9.7473475,8.9290174 C 9.5807999,10.621771 10.829907,12.000017 12.523141,12.000017 Z"
+     stroke="#292d32"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path245"
+     style="fill:#113366;stroke:#113366;stroke-opacity:1" />
+  <path
+     d="m 18.361534,12.000017 c 1.869108,0 3.238463,-1.516996 3.053373,-3.3762502 L 21.15587,6.0800076 C 20.822775,3.6750098 19.897547,2.7500004 17.47328,2.7500004 h -2.821983 l 0.647649,6.4842677 c 0.157332,1.5262529 1.535902,2.7657489 3.062588,2.7657489 z"
+     stroke="#292d32"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path247"
+     style="fill:#113366;stroke:#113366;stroke-opacity:1" />
+  <path
+     d="m 6.6384588,12.000017 c 1.5266864,0 2.9053342,-1.239496 3.0533728,-2.7657489 L 9.8953972,7.19001 10.339524,2.7500004 H 7.5174638 c -2.4241893,0 -3.3494612,0.9250094 -3.6825565,3.3300072 L 3.5850859,8.6237668 C 3.4000404,10.483021 4.7694282,12.000017 6.6384588,12.000017 Z"
+     stroke="#292d32"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path249"
+     style="fill:#113366;stroke:#113366;stroke-opacity:1" />
+  <path
+     d="m 12.523141,16.625064 c -1.545195,0 -2.313158,0.767677 -2.313158,2.312468 V 21.25 h 4.626293 v -2.312468 c 0,-1.544791 -0.767895,-2.312468 -2.313135,-2.312468 z"
+     stroke="#292d32"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path251"
+     style="fill:none;stroke:#113366;stroke-opacity:1" />
+</svg>
