@@ -67,6 +67,7 @@ https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/a513ee14-87e0-
 - [⚙️ Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
+	- [💰 Configure your Stripe keys](#-configure-your-Stripe-key)
     - [🤖 Running Shop-Ecommerce-app](#-running-Shop-Ecommerce-app)
     - [🧪 Tests](#-tests)
 - [🛣 Roadmap](#-roadmap)
@@ -878,6 +879,14 @@ flutter pub get
       }
       ```
 
+### 💰 Configure your Stripe keys
+
+- Go to `lib\utils\service\payment\payment.dart` and configure your keys:
+
+```dart
+String _secretKey = "sk_test_2hSm...";
+String _publishableKey = "pk_test_51Ii...";
+```
 
 ### 🤖 Running Shop-Ecommerce-app
 
