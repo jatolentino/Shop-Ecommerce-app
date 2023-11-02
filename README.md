@@ -1,706 +1,536 @@
-<div align="center">
-<h1 align="center">
-<img src="https://raw.githubusercontent.com/jatolentino/Shop-Ecommerce/main/logo.svg" width="100" />
-<br>SHOP APP</h1>
+<style>
+	img {
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		display:block;
+		margin: 1rem auto 3rem;
+	}
+	a.back2top {
+		display: block;
+		font-size: 14px;
+		text-align: right;
+		text-decoration: none;
+		opacity: 0.7;
+		cursor: pointer;
+	}
+	a.back2top:hover {
+		text-decoration: underline;
+	}
+</style>
 
-[<img src="https://svgshare.com/i/z3H.svg" height="30">](https://drive.usercontent.google.com/download?id=1aYbu_jfjn-nUALQL96oychs_HDYic6dg&export=download&authuser=0&confirm=t&uuid=29eb1889-dc44-418a-b7d5-2cd34726e419&at=APZUnTV9atPPiL7Rn5O6yNi6ZAmE:1698640911138) [<img src="https://svgshare.com/i/z5J.svg" height="30">](https://drive.usercontent.google.com/download?id=1aYbu_jfjn-nUALQL96oychs_HDYic6dg&export=download&authuser=0&confirm=t&uuid=29eb1889-dc44-418a-b7d5-2cd34726e419&at=APZUnTV9atPPiL7Rn5O6yNi6ZAmE:1698640911138) 
+# Create an AI Chatbot
 
-<kbd><img src="https://raw.githubusercontent.com/jatolentino/Shop-Ecommerce/main/logo.svg" alt="des"  style="border-radius: 20px; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;" width="100" /><kbd>
-
-<h3>Buy anytime you want!<br>
-Pay with any credit or debit card<br>
-Compatible with Android & iOS devices</h3>
-
-<p align="center">
-
-<img src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-<img src="https://img.shields.io/badge/Dart-0175C2.svg?style=flat-square&logo=Dart&logoColor=white" alt="Dart" />
-<img src="https://img.shields.io/badge/Swift-F05138.svg?style=flat-square&logo=Swift&logoColor=white" alt="Swift" />
-<img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=flat-square&logo=Kotlin&logoColor=white" alt="Kotlin" />
-<img src="https://img.shields.io/badge/Gradle-02303A.svg?style=flat-square&logo=Gradle&logoColor=white" alt="Gradle" />
-
-<img src="https://img.shields.io/badge/Java-F48319?style=flat-square&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgZmlsbD0id2hpdGUiCiAgIHdpZHRoPSIyNCIKICAgaGVpZ2h0PSIyNCIKICAgdmlld0JveD0iMCAwIDI0IDI0IgogICBzdHlsZT0iZmlsbDogcmdiYSgwLCAwLCAwLCAxKTt0cmFuc2Zvcm06IDttc0ZpbHRlcjo7IgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc3OTU0MyIKICAgc29kaXBvZGk6ZG9jbmFtZT0iamF2YS5zdmciCiAgIGlua3NjYXBlOnZlcnNpb249IjEuMi4yICg3MzJhMDFkYTYzLCAyMDIyLTEyLTA5KSIKICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcwogICAgIGlkPSJkZWZzNzk1NDciIC8+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIGlkPSJuYW1lZHZpZXc3OTU0NSIKICAgICBwYWdlY29sb3I9IiNmZmZmZmYiCiAgICAgYm9yZGVyY29sb3I9IiMwMDAwMDAiCiAgICAgYm9yZGVyb3BhY2l0eT0iMC4yNSIKICAgICBpbmtzY2FwZTpzaG93cGFnZXNoYWRvdz0iMiIKICAgICBpbmtzY2FwZTpwYWdlb3BhY2l0eT0iMC4wIgogICAgIGlua3NjYXBlOnBhZ2VjaGVja2VyYm9hcmQ9IjAiCiAgICAgaW5rc2NhcGU6ZGVza2NvbG9yPSIjZDFkMWQxIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpbmtzY2FwZTp6b29tPSIxNy45NTgzMzMiCiAgICAgaW5rc2NhcGU6Y3g9IjAuNjQwMzcxMjMiCiAgICAgaW5rc2NhcGU6Y3k9IjcuOTA3MTkyNiIKICAgICBpbmtzY2FwZTp3aW5kb3ctd2lkdGg9IjE5MjAiCiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxNyIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iLTgiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9IjEwNzIiCiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSIKICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJzdmc3OTU0MyIgLz4KICA8cGF0aAogICAgIGQ9Ik05LjM3IDE3LjUxYy0zLjA5Ljg2IDEuODcgMi42NCA1LjggMWE3LjE4IDcuMTggMCAwIDEtMS4xLS41NCAxMS41OSAxMS41OSAwIDAgMS00LjE2LjE4Yy0xLjMxLS4xNS0uNTQtLjY0LS41NC0uNjR6bTUuMzMtMS42OGExNi4yNyAxNi4yNyAwIDAgMS01LjM2LjI2Yy0xLjMxLS4xNC0uNDUtLjc3LS40NS0uNzctMy40IDEuMTIgMS44OSAyLjQgNi42NCAxYTIuMjUgMi4yNSAwIDAgMS0uODMtLjQ5em0xLjgyLTkuNzNzLTYuODcgMS43MS0zLjU5IDUuNDlhMS40NyAxLjQ3IDAgMCAxLS4yNSAyLjEyczIuNDYtMS4yNyAxLjMzLTIuODYtMS44Ni0yLjIyIDIuNTEtNC43NXoiCiAgICAgaWQ9InBhdGg3OTUzNyIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO3N0cm9rZS13aWR0aDowLjc7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZTojZmZmZmZmIiAvPgogIDxwYXRoCiAgICAgZD0iTTE4LjEzIDE5LjE0cy41Ni40Ni0uNjMuODJjLTIuMjcuNjktOS40My45LTExLjQyIDAtLjcyLS4zMS42Mi0uNzQgMS0uODNhMi41NCAyLjU0IDAgMCAxIC42OS0uMDhjLS44LS41Ni01LjE1IDEuMS0yLjIxIDEuNTggOC4wNSAxLjM3IDE0LjY0LS41NiAxMi41Ny0xLjQ5em0tMi43Ni00Ljg4YTcgNyAwIDAgMSAuOTItLjQ5cy0xLjUxLjI3LTMgLjRhMjguMTEgMjguMTEgMCAwIDEtNC44Mi4wNUM2LjA5IDEzLjkxIDkuNzQgMTMgOS43NCAxM2E2LjgxIDYuODEgMCAwIDAtMy4xNi43NWMtMi4wNiAxLjAzIDUuMDkgMS40OCA4Ljc5LjUxem0uOTEgMi40NGEuMzkuMzkgMCAwIDEtLjA4LjA5YzUtMS4zMiAzLjE4LTQuNjUuNzgtMy44MWEuNzEuNzEgMCAwIDAtLjMzLjI1cy4xNC0uMDUuNDMtLjEyYzEuMjItLjI1IDIuOTIgMS42My0uOCAzLjU5ek0xMiAxM2MtLjc0LTEuNjctMy4yNi0zLjE0IDAtNS43MUMxNi4wOSA0LjA4IDE0IDIgMTQgMmMuODQgMy4zMS0zIDQuMzEtNC4zNCA2LjM3LS45MyAxLjQxLjQ3IDIuOTIgMi4zNCA0LjYzeiIKICAgICBpZD0icGF0aDc5NTM5IgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjAuNztzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlOiNmZmZmZmYiIC8+CiAgPHBhdGgKICAgICBkPSJtIDE2LjQxLDIyLjMxOTYyMSBhIDI5Ljc1LDI5Ljc1IDAgMCAxIC05LjE0LDAuMTQgYyAwLDAgMC40NiwwLjM4IDIuODQsMC41MyAzLjYxLDAuMjMgOS4xNSwtMC4xMiA5LjI5LC0xLjgzIDAsMCAtMC4yNiwwLjY0IC0yLjk5LDEuMTYgeiIKICAgICBpZD0icGF0aDc5NTQxIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7c3Ryb2tlOiNmZmZmZmY7c3Ryb2tlLXdpZHRoOjAuNztzdHJva2UtZGFzaGFycmF5Om5vbmUiIC8+Cjwvc3ZnPgo=&logoColor=white" />
-<img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=flat-square&logo=HTML5&logoColor=white" alt="HTML5" />
-<img src="https://img.shields.io/badge/YAML-CB171E.svg?style=flat-square&logo=YAML&logoColor=white" alt="YAML" />
-<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat-square&logo=JSON&logoColor=white" alt="JSON" />
-<img src="https://img.shields.io/badge/Cloudinary-3448c5.svg?style=flat-square&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iOS45MDI4MjE1bW0iCiAgIGhlaWdodD0iNi40ODA2ODYybW0iCiAgIHZpZXdCb3g9IjAgMCA5LjkwMjgyMTUgNi40ODA2ODYyIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc4MjIyOCIKICAgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4yLjIgKDczMmEwMWRhNjMsIDIwMjItMTItMDkpIgogICBzb2RpcG9kaTpkb2NuYW1lPSJjbG91ZGluYXJ5LnN2ZyIKICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIKICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48c29kaXBvZGk6bmFtZWR2aWV3CiAgICAgaWQ9Im5hbWVkdmlldzgyMjMwIgogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzAwMDAwMCIKICAgICBib3JkZXJvcGFjaXR5PSIwLjI1IgogICAgIGlua3NjYXBlOnNob3dwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwLjAiCiAgICAgaW5rc2NhcGU6cGFnZWNoZWNrZXJib2FyZD0iMCIKICAgICBpbmtzY2FwZTpkZXNrY29sb3I9IiNkMWQxZDEiCiAgICAgaW5rc2NhcGU6ZG9jdW1lbnQtdW5pdHM9Im1tIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpbmtzY2FwZTp6b29tPSI4LjY4Nzk2OTQiCiAgICAgaW5rc2NhcGU6Y3g9IjMxLjI1MDExIgogICAgIGlua3NjYXBlOmN5PSItMy42ODMyNTQyIgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDE3IgogICAgIGlua3NjYXBlOndpbmRvdy14PSItOCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMTA3MiIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9ImxheWVyMSIgLz48ZGVmcwogICAgIGlkPSJkZWZzODIyMjUiIC8+PGcKICAgICBpbmtzY2FwZTpsYWJlbD0iTGF5ZXIgMSIKICAgICBpbmtzY2FwZTpncm91cG1vZGU9ImxheWVyIgogICAgIGlkPSJsYXllcjEiCiAgICAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTg2LjY5MDU1OCwtMTU0Ljg3NzY2KSI+PHBhdGgKICAgICAgIGQ9Im0gOTQuNzIzMjI4LDE1Ny4xODM0MyBjIC0wLjQzNTMyMywtMS4zNjUwMiAtMS42OTg5NzMsLTIuMjk1MzggLTMuMTMxNjkxLC0yLjMwNTcxIC0xLjIwMzM2OCwtMC4wMDcgLTIuMzEyMDM5LDAuNjUxNzQgLTIuODgxNTE3LDEuNzExODUgLTIuMzYxNzY3LDAuNDIzMjUgLTIuNzcxNDUxLDMuNjM3MDggLTAuNTkxMzk2LDQuNjM5MyBsIDAuMDYxNTIsMC4wMjc5IGggMC4wMDQxIHYgLTAuNjk3MjEgYyAtMS40ODY2OTgsLTAuOTEyNjIgLTAuOTcyNTU3LC0zLjE5MDU2IDAuNzYyMDA2LC0zLjM3NjEyIGwgMC4xNzIyNTEsLTAuMDE4IDAuMDc1NDYsLTAuMTU1MDMgYyAwLjQzNzQ0NSwtMC45MjcwNyAxLjM3MjQ5MywtMS41MTY2MyAyLjM5NzU3MywtMS41MTE3MSAxLjIzMDk4NiwwLjAwOSAyLjI5ODAyNywwLjg1NDIgMi41ODc4NjksMi4wNTA2MSBsIDAuMDU5MDYsMC4yMzQ1OSBoIDAuMjQ2MDczIGMgMC44MjQ5OTksMC4wMTY5IDEuNDg1Nzk5LDAuNjg5IDEuNDg4NzQzLDEuNTE0MTcgMCwwLjU3ODI4IC0wLjMzMzg0LDEuMDUxNTYgLTAuOTAyMjY5LDEuMjkxMDcgdiAwLjY2MTExIGwgMC4wNDEwMSwtMC4wMTMxIGMgMC45MTM3NTEsLTAuMjk5MzkgMS40ODEzNiwtMS4wNDI1MyAxLjQ4MTM2LC0xLjkzOTA2IC0wLjAwNzgsLTEuMDczMDEgLTAuODA2MTQyLC0xLjk3NTcyIC0xLjg3MDE1NiwtMi4xMTQ1OCB6IgogICAgICAgZmlsbD0iIzM0NDhjNSIKICAgICAgIGlkPSJwYXRoODI3MTYiCiAgICAgICBzdHlsZT0ic3Ryb2tlLXdpZHRoOjAuMDgyMDI0NDtmaWxsOiNmZmZmZmYiCiAgICAgICBzb2RpcG9kaTpub2RldHlwZXM9InNjY2NjY2NjY2NjY2NjY2NjY2NjcyIgLz48cGF0aAogICAgICAgZD0ibSA5MC4zODkwNTksMTYxLjE3NjI5IDAuMTM2MTYxLDAuMTM2MTYgYSAwLjAyNzA2ODA1LDAuMDI3MDY4MDUgMCAwIDEgLTAuMDE4ODcsMC4wNDU5IGggLTEuMDc0NTE5IGEgMC40OTIxNDYzNCwwLjQ5MjE0NjM0IDAgMCAxIC0wLjQ5MjE0NywtMC40OTIxNSB2IC0yLjA4NjcgYSAwLjAyNzA2ODA1LDAuMDI3MDY4MDUgMCAwIDAgLTAuMDI3MDcsLTAuMDI3MSBoIC0wLjIyOTY2OCBhIDAuMDI3MDY4MDUsMC4wMjcwNjgwNSAwIDAgMSAtMC4wMTk2OSwtMC4wNDU5IGwgMC45MTIxMTEsLTAuOTEyMTEgYSAwLjAyNzA2ODA1LDAuMDI3MDY4MDUgMCAwIDEgMC4wMzg1NSwwIGwgMC45MTEyOTEsMC45MTIxMSBhIDAuMDI3MDY4MDUsMC4wMjcwNjgwNSAwIDAgMSAtMC4wMTg4NywwLjA0NTkgaCAtMC4yMzI5NDkgYSAwLjAyNzg4ODI5LDAuMDI3ODg4MjkgMCAwIDAgLTAuMDI3ODksMC4wMjcxIHYgMi4wNTA2MSBhIDAuNDkyMTQ2MzQsMC40OTIxNDYzNCAwIDAgMCAwLjE0MzU0MiwwLjM0NjE0IHogbSAyLjAxNTM0LDAgMC4xMzY5OCwwLjEzNjE2IGEgMC4wMjcwNjgwNSwwLjAyNzA2ODA1IDAgMCAxIC0wLjAxOTY5LDAuMDQ1OSBoIC0xLjA3MjA1OCBhIDAuNDkyMTQ2MzQsMC40OTIxNDYzNCAwIDAgMSAtMC40OTIxNDcsLTAuNDkyMTUgdiAtMS41NTkyOCBhIDAuMDI3ODg4MjksMC4wMjc4ODgyOSAwIDAgMCAtMC4wMjcwNywtMC4wMjc5IGggLTAuMjMyMTI5IGEgMC4wMjcwNjgwNSwwLjAyNzA2ODA1IDAgMCAxIC0wLjAxODg2LC0wLjA0NTkgbCAwLjkxMTI5MSwtMC45MTA0OCBhIDAuMDI3MDY4MDUsMC4wMjcwNjgwNSAwIDAgMSAwLjAzODU1LDAgbCAwLjkxMjExMSwwLjkwODgzIGEgMC4wMjcwNjgwNSwwLjAyNzA2ODA1IDAgMCAxIC0wLjAxOTY5LDAuMDQ1OSBoIC0wLjIzMjk0OSBhIDAuMDI3ODg4MjksMC4wMjc4ODgyOSAwIDAgMCAtMC4wMjcwNywwLjAyNzkgdiAxLjUyNDgzIGEgMC40OTIxNDYzNCwwLjQ5MjE0NjM0IDAgMCAwIDAuMTQyNzIzLDAuMzQ2MTQgeiBtIDIuMDE2MTU5LDAgMC4xMzYxNjEsMC4xMzYxNiBhIDAuMDI3MDY4MDUsMC4wMjcwNjgwNSAwIDAgMSAtMC4wMTg4NywwLjA0NTkgaCAtMS4wNzUzNCBhIDAuNDkyMTQ2MzQsMC40OTIxNDYzNCAwIDAgMSAtMC40OTIxNDYsLTAuNDkyMTUgdiAtMS4wMzU5NyBhIDAuMDI3MDY4MDUsMC4wMjcwNjgwNSAwIDAgMCAtMC4wMjcwNywtMC4wMjcxIEggOTIuNzEzNjMgYSAwLjAyNzA2ODA1LDAuMDI3MDY4MDUgMCAwIDEgLTAuMDE4ODYsLTAuMDQ2OCBsIDAuOTEyMTExLC0wLjkxMTI5IGEgMC4wMjYyNDc4LDAuMDI2MjQ3OCAwIDAgMSAwLjAzNzczLDAgbCAwLjkxMjExMiwwLjkxMTI5IGEgMC4wMjcwNjgwNSwwLjAyNzA2ODA1IDAgMCAxIC0wLjAxODg3LDAuMDQ2OCBoIC0wLjIzMzc3IGEgMC4wMjcwNjgwNSwwLjAyNzA2ODA1IDAgMCAwIC0wLjAyNzA3LDAuMDI3MSB2IDAuOTk5ODggYSAwLjQ5MjE0NjM0LDAuNDkyMTQ2MzQgMCAwIDAgMC4xNDM1NDMsMC4zNDYxNCB6IgogICAgICAgZmlsbD0iIzM0NDhjNSIKICAgICAgIGlkPSJwYXRoODI3MTgiCiAgICAgICBzdHlsZT0ic3Ryb2tlLXdpZHRoOjAuMDgyMDI0NDtmaWxsOiNmZmZmZmYiIC8+PC9nPjwvc3ZnPgo=&logoColor=white" alt="Cloudinary" />
-<img src="https://img.shields.io/badge/API-111c24.svg?style=flat-square&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgoKPHN2ZwogICB3aWR0aD0iNjEuMzQ2MjM3bW0iCiAgIGhlaWdodD0iNjEuMzQ2MjMzbW0iCiAgIHZpZXdCb3g9IjAgMCA2MS4zNDYyMzcgNjEuMzQ2MjMzIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzdmc4NTY0NSIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4yLjIgKDczMmEwMWRhNjMsIDIwMjItMTItMDkpIgogICBzb2RpcG9kaTpkb2NuYW1lPSJhcGkuc3ZnIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxzb2RpcG9kaTpuYW1lZHZpZXcKICAgICBpZD0ibmFtZWR2aWV3ODU2NDciCiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIgogICAgIGJvcmRlcmNvbG9yPSIjMDAwMDAwIgogICAgIGJvcmRlcm9wYWNpdHk9IjAuMjUiCiAgICAgaW5rc2NhcGU6c2hvd3BhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAuMCIKICAgICBpbmtzY2FwZTpwYWdlY2hlY2tlcmJvYXJkPSIwIgogICAgIGlua3NjYXBlOmRlc2tjb2xvcj0iI2QxZDFkMSIKICAgICBpbmtzY2FwZTpkb2N1bWVudC11bml0cz0ibW0iCiAgICAgc2hvd2dyaWQ9ImZhbHNlIgogICAgIGlua3NjYXBlOnpvb209IjAuNTQyOTk4MDkiCiAgICAgaW5rc2NhcGU6Y3g9IjEyMC42MjY1OCIKICAgICBpbmtzY2FwZTpjeT0iLTkzLjkyMjk4MiIKICAgICBpbmtzY2FwZTp3aW5kb3ctd2lkdGg9IjE5MjAiCiAgICAgaW5rc2NhcGU6d2luZG93LWhlaWdodD0iMTAxNyIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iLTgiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9IjEwNzIiCiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSIKICAgICBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJsYXllcjEiIC8+CiAgPGRlZnMKICAgICBpZD0iZGVmczg1NjQyIiAvPgogIDxnCiAgICAgaW5rc2NhcGU6bGFiZWw9IkxheWVyIDEiCiAgICAgaW5rc2NhcGU6Z3JvdXBtb2RlPSJsYXllciIKICAgICBpZD0ibGF5ZXIxIgogICAgIHRyYW5zZm9ybT0idHJhbnNsYXRlKC03NC4zMjY4ODIsLTExNy44MjY4OCkiPgogICAgPGVsbGlwc2UKICAgICAgIHN0eWxlPSJvcGFjaXR5OjE7ZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTojZmZmZmZmO3N0cm9rZS13aWR0aDowLjEyNjQxMSIKICAgICAgIGlkPSJwYXRoODYxODEiCiAgICAgICBjeD0iMTA1IgogICAgICAgY3k9IjE0OC41IgogICAgICAgcng9IjMwLjYwOTkxMyIKICAgICAgIHJ5PSIzMC42MDk5MTEiIC8+CiAgICA8dGV4dAogICAgICAgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIKICAgICAgIHN0eWxlPSJmb250LXNpemU6MzguMXB4O2ZvbnQtZmFtaWx5OidMaW51eCBCaW9saW51bSBHJzstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidMaW51eCBCaW9saW51bSBHLCBOb3JtYWwnO3RleHQtYWxpZ246Y2VudGVyO3RleHQtYW5jaG9yOm1pZGRsZTtvcGFjaXR5OjE7ZmlsbDojMTExYzI0O2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTojMTExYzI0O3N0cm9rZS13aWR0aDoxLjU4NTtzdHJva2UtZGFzaGFycmF5Om5vbmUiCiAgICAgICB4PSIxMDUuMDc5MDYiCiAgICAgICB5PSIxNTcuOTEzMzgiCiAgICAgICBpZD0idGV4dDg2NjAwIj48dHNwYW4KICAgICAgICAgc29kaXBvZGk6cm9sZT0ibGluZSIKICAgICAgICAgaWQ9InRzcGFuODY1OTgiCiAgICAgICAgIHN0eWxlPSJmb250LXNpemU6MzguMXB4O2ZpbGw6IzExMWMyNDtzdHJva2U6IzExMWMyNDtzdHJva2Utd2lkdGg6MS41ODU7c3Ryb2tlLWRhc2hhcnJheTpub25lIgogICAgICAgICB4PSIxMDUuMDc5MDYiCiAgICAgICAgIHk9IjE1Ny45MTMzOCI+eyB9PC90c3Bhbj48L3RleHQ+CiAgPC9nPgo8L3N2Zz4K&logoColor=white" alt="API" />
-
-
-</p>
-<img src="https://img.shields.io/github/license/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="GitHub license" />
-<img src="https://img.shields.io/github/last-commit/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="git-last-commit" />
-<img src="https://img.shields.io/github/commit-activity/m/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="GitHub commit activity" />
-<img src="https://img.shields.io/github/languages/top/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="GitHub top language" />
+## Introduction
+<style>
+	#actions {
+		display: flex;
+		gap: 16px;
+		flex-flow: row wrap;
+		margin-top: 16px;
+	}
+	#actions > a {
+		
+		flex: 0 0 auto;
+		background-color: #0067f4;
+		color: #ffffff;
+		padding: 12px 16px;
+		border-radius: 4px;
+		
+		text-decoration: none;
+		font-weight: 500;
+		
+		display: flex;
+		gap: 8px;
+		align-items: center;
+	}
+	#actions > a:hover {
+		background-color: #003986;
+	}
+	#actions > a > img {
+		box-shadow: none;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		margin: 0;
+		
+		-webkit-filter: invert(1);
+		filter: invert(1);
+	}
+	#actions > a > img
+</style>
+<div id="actions">
+	<a href="https://mehagoyal.qoom.space/~/AI_Chatbot" target="_blank">
+		<img src="/libs/icons/play.svg"> View Project
+	</a>
+	<a href="https://mehagoyal.qoom.space/edit/AI_Chatbot/README.md" target="_blank">
+		<img src="/libs/icons/coding.svg">View Code
+	</a>
+	<a href="https://www.qoom.io/subscribe/choosecodingspace?sourceDomain=mehagoyal.qoom.space&projectPath=%2FAI_Chatbot" target="_blank">
+		<img src="/libs/icons/clone.svg">Clone Project
+	</a>
 </div>
 
----
 
-## 📖 Table of Contents
-- [📖 Table of Contents](#-table-of-contents)
-- [📍 Overview](#-overview)
-- [📦 Features](#-features)
-- [📂 repository Structure](#-repository-structure)
-- [⚙️ Modules](#modules)
-- [🚀 Getting Started](#-getting-started)
-    - [🔧 Installation](#-installation)
-    - [🤖 Running Shop-Ecommerce-app](#-running-Shop-Ecommerce-app)
-    - [🧪 Tests](#-tests)
-- [🛣 Roadmap](#-roadmap)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👏 Acknowledgments](#-acknowledgments)
+## Goals:
+>1. Develop Python code to implement the **OpenAI API** that recieves user questions and develops a response.
+>2. Use **Flask and JavaScript** to communicate data between the frontend and backend code.
+>3. Design a page that displays the **popup chatbot** and allows users to open and close the popup.
 
----
+## Technologies you will Learn:
+>1. Submitting data and recieving generated responses using the `OPENAI` API
+>2. Using `JavaScript` functions and `Flask` to send and recieve data from the page to the API
+>3. The `HTML/CSS` necessary to create a popup chatbot page.
 
+## Strategy
+> 1. <a href="#top">Create a basic input and output on chatbot page</a>
+> 2. <a href="#pythonapi">Access and Train AI API using Python</a> 
+> 3. <a href="#javascriptconnect">Connect API functionality to the chatbot page</a> 
+> 4. <a href="#cssdesign">Design chatbot popup page</a>
 
-## 📍 Overview
+## Need Help?
 
-HTTPStatus Exception: 429
+Get help from the Qoom team and our community members. <a href="https://discord.gg/G4cFUdTq2H" target="_blank">Join Qoom Community</a>
 
 ---
 
-## 📦 Features
+<h2 id="top">1. Create basic page to display input and output</h2>
 
-HTTPStatus Exception: 429
+It might be difficult to build the chatbot and test its functionality without starting with a basic page for sending inputs and recieving outputs.
+
+Let's implement a basic structure to send input and recieve ouput using HTML, and we will design the bot later using CSS.
+
+If you haven't already, create an account on <a href="https://www.qoom.io" target="_blank">https://www.qoom.io</a> and follow along. We are using `Qoom` so that we can create a login system without writing any backend code. After creating an account, create a `New Project` and name it with a fake company name of your choosing. Then add the following `html` elements to the `<body>` elements:
+
+```html
+<body>
+	
+	<div class="chat-input">      
+        <input type="text" name="question" placeholder="How can we help you?"/>
+      <button type="submit" onclick='send()'>Submit</button>
+    </div>
+    
+    <div id="textarea" class="chat-logs">
+     </div>
+
+</body>
+
+```
+The first div holds an input element, and a button. The input has the placeholder "How can we help you?" in order to prompt the user to ask a question. The button, with type submit and the corressponding function send, will send the user's request to the back end later on. The second div with id="textarea" is where the output will be printed.
 
 ---
 
 
-## 📂 Repository Structure
+<h2 id="pythonapi">2. Use Python and Open AI API to develop the backend chatbot</h2>
 
-```sh
-└── Shop-Ecommerce-app/
-    ├── .metadata
-    ├── android/
-    │   ├── app/
-    │   │   ├── build.gradle
-    │   │   └── src/
-    │   ├── build.gradle
-    │   ├── gradle/
-    │   │   └── wrapper/
-    │   ├── settings.gradle
-    │   └── upload-keystore.jks
-    ├── ios/
-    │   ├── Flutter/
-    │   │   ├── AppFrameworkInfo.plist
-    │   │   ├── Debug.xcconfig
-    │   │   └── Release.xcconfig
-    │   ├── Runner/
-    │   │   ├── AppDelegate.swift
-    │   │   ├── Assets.xcassets/
-    │   │   ├── Base.lproj/
-    │   │   ├── Info.plist
-    │   │   └── Runner-Bridging-Header.h
-    │   ├── Runner.xcodeproj/
-    │   │   ├── project.pbxproj
-    │   │   ├── project.xcworkspace/
-    │   │   └── xcshareddata/
-    │   └── Runner.xcworkspace/
-    │       ├── contents.xcworkspacedata
-    │       └── xcshareddata/
-    ├── lib/
-    │   ├── config/
-    │   │   └── routes/
-    │   ├── constants/
-    │   │   ├── api_path.dart
-    │   │   ├── app_color.dart
-    │   │   ├── app_constants.dart
-    │   │   ├── app_text.dart
-    │   │   ├── assets_path.dart
-    │   │   └── size.dart
-    │   ├── core/
-    │   │   └── auth/
-    │   ├── main.dart
-    │   ├── module/
-    │   │   ├── controller/
-    │   │   ├── model/
-    │   │   └── view/
-    │   ├── utils/
-    │   │   ├── helper/
-    │   │   └── service/
-    │   └── widgets/
-    │       ├── account_text.dart
-    │       ├── action_icon.dart
-    │       ├── bottom_nav.dart
-    │       ├── custom_app_bar.dart
-    │       ├── custom_button.dart
-    │       ├── header_text.dart
-    │       ├── heading_text.dart
-    │       ├── loading_indicator.dart
-    │       ├── menu_drawer.dart
-    │       ├── product_item.dart
-    │       ├── search_delegate.dart
-    │       ├── search_field.dart
-    │       └── search_screen.dart
-    ├── pubspec.lock
-    ├── pubspec.yaml
-    ├── test/
-    │   └── widget_test.dart
-    └── web/
-        ├── icons/
-        ├── index.html
-        └── manifest.json
+Most of the following work will be done in a single, new python file called app.py.
+
+Here is the setup for the python file and API we will be using: 
+```python
+from flask import Flask, request, session
+from random import choice
+from flask import Flask, request, Response
+import os
+import openai
+app = Flask(__name__)
+
+openai.api_key = os.getenv('Your-Key-Variable')
+completion = openai.Completion()
+```
+You will want to save your secret key as an env variable, whose name you will put in the place of "Your-Key-Variable"
+
+Now, we will be adding in some training data of our own! Separate each question and answer set with a new line to indicate where each conversation ends. The start sequence and restart sequence labeled at the beginning help the API understand when to start responding and when a user has restarted the conversation.
+
+``` python
+start_sequence = """\nQoom:"""
+restart_sequence = """\n\nYou:"""
+#Add comments
+
+session_prompt = """Welcome! I am QoomBot, Qoom's very own AI based chatbot. How may I help you?
+
+	You: What do you do?
+	Qoom: I am an AI tool to help you navigate the Qoom platform. 
+
+	You: How can I create a new project? 
+	Qoom: Go to your coding space and click New Project. Enter a project name and select Create. 
+
+	You: How can I learn to code?
+	Qoom: Go to qoom.io and navigate to the Tutorials page to learn how to code new projects. You can also go to your coding space and select the Qoom of the Week tab to join a workshop. 
+
+	You: Can I get involved with the Qoom organization? 
+	Qoom: Apply to Qoom's Creator Group sessions to start getting involved. 
+
+	You: Can you build me a website? 
+	Qoom: I'm afraid I'm not able to help you with that. 
+
+	You: What should I do first?
+	Qoom: You should start by creating an account. You can access tutorials, your coding space, and new opportunities. 
+
+	You:""" #continue adding questions and answers here
+
+stop = "\n"
 
 ```
 
----
-
-
-## ⚙️ Modules
-
-<details closed><summary>Root</summary>
-
-| File                                                                                     | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ---                                                                                      | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| [pubspec.yaml](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/pubspec.yaml) | The code above represents the pubspec.yaml file for a Flutter project called "shop". It includes the project name, description, version number, and environment specifications. It also lists the project dependencies, such as the Flutter SDK, various packages for features like icon fonts, HTTP requests, image caching, and more. Additionally, it specifies assets, including icons and images, that are used in the project. This file is crucial for managing project dependencies and assets in Flutter development.          |
-| [pubspec.lock](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/pubspec.lock) | The code represents a directory tree structure for a Shop-Ecommerce-app. It consists of separate directories for Android and iOS, each containing files and folders relevant to their respective platforms. The "lib" directory contains various subdirectories for configuration, constants, core functionalities, modules, utilities, and widgets. These subdirectories have files with code for specific features and components required by the app, such as routes, models, controllers, views, helpers, services, and UI widgets. |
-| [.metadata](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/.metadata)       | HTTPStatus Exception: 429                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-
-</details>
-
-<details closed><summary>Web</summary>
-
-| File                                                                                           | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| ---                                                                                            | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [manifest.json](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/web/manifest.json) | The code represents the manifest.json file for a Flutter project named "shop" in the web/ directory. The manifest contains metadata and configuration for a Progressive Web App (PWA), including the app's name, short name, start URL, display mode, background color, theme color, description, orientation, and icons in different sizes and types. This allows the app to be installed and launched as a standalone application on compatible devices. |
-| [index.html](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/web/index.html)       | HTTPStatus Exception: 429                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-
-</details>
-
-<details closed><summary>Lib</summary>
-
-| File                                                                                   | Summary                   |
-| ---                                                                                    | ---                       |
-| [main.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/main.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Constants</summary>
-
-| File                                                                                                               | Summary                   |
-| ---                                                                                                                | ---                       |
-| [app_constants.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/constants/app_constants.dart) | HTTPStatus Exception: 429 |
-| [app_text.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/constants/app_text.dart)           | HTTPStatus Exception: 429 |
-| [assets_path.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/constants/assets_path.dart)     | HTTPStatus Exception: 429 |
-| [size.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/constants/size.dart)                   | HTTPStatus Exception: 429 |
-| [app_color.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/constants/app_color.dart)         | HTTPStatus Exception: 429 |
-| [api_path.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/constants/api_path.dart)           | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Auth</summary>
-
-| File                                                                                                     | Summary                   |
-| ---                                                                                                      | ---                       |
-| [login.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/core/auth/login.dart)       | HTTPStatus Exception: 429 |
-| [register.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/core/auth/register.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Routes</summary>
-
-| File                                                                                                           | Summary                   |
-| ---                                                                                                            | ---                       |
-| [app_route.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/config/routes/app_route.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Helper</summary>
-
-| File                                                                                                            | Summary                   |
-| ---                                                                                                             | ---                       |
-| [exception.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/helper/exception.dart)   | HTTPStatus Exception: 429 |
-| [bindings.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/helper/bindings.dart)     | HTTPStatus Exception: 429 |
-| [loader.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/helper/loader.dart)         | HTTPStatus Exception: 429 |
-| [dialog.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/helper/dialog.dart)         | HTTPStatus Exception: 429 |
-| [show_snack.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/helper/show_snack.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Payment</summary>
-
-| File                                                                                                               | Summary                   |
-| ---                                                                                                                | ---                       |
-| [payment.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/service/payment/payment.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Api</summary>
-
-| File                                                                                                                           | Summary                   |
-| ---                                                                                                                            | ---                       |
-| [auth_service.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/service/api/auth_service.dart)       | HTTPStatus Exception: 429 |
-| [product_service.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/service/api/product_service.dart) | HTTPStatus Exception: 429 |
-| [checkout.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/utils/service/api/checkout.dart)               | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Widgets</summary>
-
-| File                                                                                                                     | Summary                   |
-| ---                                                                                                                      | ---                       |
-| [search_delegate.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/search_delegate.dart)     | HTTPStatus Exception: 429 |
-| [custom_app_bar.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/custom_app_bar.dart)       | HTTPStatus Exception: 429 |
-| [menu_drawer.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/menu_drawer.dart)             | HTTPStatus Exception: 429 |
-| [account_text.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/account_text.dart)           | HTTPStatus Exception: 429 |
-| [loading_indicator.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/loading_indicator.dart) | HTTPStatus Exception: 429 |
-| [action_icon.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/action_icon.dart)             | HTTPStatus Exception: 429 |
-| [custom_button.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/custom_button.dart)         | HTTPStatus Exception: 429 |
-| [product_item.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/product_item.dart)           | HTTPStatus Exception: 429 |
-| [search_screen.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/search_screen.dart)         | HTTPStatus Exception: 429 |
-| [search_field.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/search_field.dart)           | HTTPStatus Exception: 429 |
-| [bottom_nav.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/bottom_nav.dart)               | HTTPStatus Exception: 429 |
-| [heading_text.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/heading_text.dart)           | HTTPStatus Exception: 429 |
-| [header_text.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/widgets/header_text.dart)             | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Model</summary>
-
-| File                                                                                                                    | Summary                   |
-| ---                                                                                                                     | ---                       |
-| [user_model.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/model/user_model.dart)         | HTTPStatus Exception: 429 |
-| [product_model.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/model/product_model.dart)   | HTTPStatus Exception: 429 |
-| [banner_model.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/model/banner_model.dart)     | HTTPStatus Exception: 429 |
-| [category_model.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/model/category_model.dart) | HTTPStatus Exception: 429 |
-| [checkout_model.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/model/checkout_model.dart) | HTTPStatus Exception: 429 |
-| [my_order_model.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/model/my_order_model.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Controller</summary>
-
-| File                                                                                                                           | Summary                   |
-| ---                                                                                                                            | ---                       |
-| [auth_controller.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/controller/auth_controller.dart) | HTTPStatus Exception: 429 |
-| [data_controller.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/controller/data_controller.dart) | HTTPStatus Exception: 429 |
-| [cart_controller.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/controller/cart_controller.dart) | HTTPStatus Exception: 429 |
-| [app_controller.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/controller/app_controller.dart)   | HTTPStatus Exception: 429 |
-| [base_controller.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/controller/base_controller.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>View</summary>
-
-| File                                                                                                               | Summary                   |
-| ---                                                                                                                | ---                       |
-| [landing_page.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/landing_page.dart) | HTTPStatus Exception: 429 |
-| [splash.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/splash.dart)             | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>About_&_conditons</summary>
-
-| File                                                                                                                             | Summary                   |
-| ---                                                                                                                              | ---                       |
-| [about.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/about_&_conditons/about.dart)           | HTTPStatus Exception: 429 |
-| [conditions.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/about_&_conditons/conditions.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Category</summary>
-
-| File                                                                                                                | Summary                   |
-| ---                                                                                                                 | ---                       |
-| [category.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/category/category.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Components</summary>
-
-| File                                                                                                                                                      | Summary                   |
-| ---                                                                                                                                                       | ---                       |
-| [category_tab.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/category/components/category_tab.dart)                    | HTTPStatus Exception: 429 |
-| [category_tab_items.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/category/components/category_tab_items.dart)        | HTTPStatus Exception: 429 |
-| [placeholder.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/prodcut_details/components/placeholder.dart)               | HTTPStatus Exception: 429 |
-| [info_with_button.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/prodcut_details/components/info_with_button.dart)     | HTTPStatus Exception: 429 |
-| [review.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/prodcut_details/components/review.dart)                         | HTTPStatus Exception: 429 |
-| [recommened_product.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/prodcut_details/components/recommened_product.dart) | HTTPStatus Exception: 429 |
-| [order_title.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/order/components/order_title.dart)                         | HTTPStatus Exception: 429 |
-| [order_item.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/order/components/order_item.dart)                           | HTTPStatus Exception: 429 |
-| [special_product.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/home/components/special_product.dart)                  | HTTPStatus Exception: 429 |
-| [flash_sale.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/home/components/flash_sale.dart)                            | HTTPStatus Exception: 429 |
-| [best_seller.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/home/components/best_seller.dart)                          | HTTPStatus Exception: 429 |
-| [banner_slider.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/home/components/banner_slider.dart)                      | HTTPStatus Exception: 429 |
-| [feature_list.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/home/components/feature_list.dart)                        | HTTPStatus Exception: 429 |
-| [cart_list.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/cart/components/cart_list.dart)                              | HTTPStatus Exception: 429 |
-| [total_checkout.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/cart/components/total_checkout.dart)                    | HTTPStatus Exception: 429 |
-| [billing_address.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/cart/components/billing_address.dart)                  | HTTPStatus Exception: 429 |
-| [counter.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/cart/components/counter.dart)                                  | HTTPStatus Exception: 429 |
-| [product_tab_items.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/products/components/product_tab_items.dart)          | HTTPStatus Exception: 429 |
-| [product_tab.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/products/components/product_tab.dart)                      | HTTPStatus Exception: 429 |
-| [wish_list.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/wishlist/components/wish_list.dart)                          | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Prodcut_details</summary>
-
-| File                                                                                                                               | Summary                   |
-| ---                                                                                                                                | ---                       |
-| [details_page.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/prodcut_details/details_page.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Order</summary>
-
-| File                                                                                                                     | Summary                   |
-| ---                                                                                                                      | ---                       |
-| [order_screen.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/order/order_screen.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Profile</summary>
-
-| File                                                                                                             | Summary                   |
-| ---                                                                                                              | ---                       |
-| [profile.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/profile/profile.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Home</summary>
-
-| File                                                                                                              | Summary                   |
-| ---                                                                                                               | ---                       |
-| [home_page.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/home/home_page.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Cart</summary>
-
-| File                                                                                                    | Summary                   |
-| ---                                                                                                     | ---                       |
-| [cart.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/cart/cart.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Products</summary>
-
-| File                                                                                                                | Summary                   |
-| ---                                                                                                                 | ---                       |
-| [products.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/products/products.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Wishlist</summary>
-
-| File                                                                                                                  | Summary                   |
-| ---                                                                                                                   | ---                       |
-| [wish_page.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/lib/module/view/wishlist/wish_page.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Runner.xcworkspace</summary>
-
-| File                                                                                                                                    | Summary                   |
-| ---                                                                                                                                     | ---                       |
-| [contents.xcworkspacedata](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcworkspace/contents.xcworkspacedata) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Xcshareddata</summary>
-
-| File                                                                                                                                                                           | Summary                   |
-| ---                                                                                                                                                                            | ---                       |
-| [WorkspaceSettings.xcsettings](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings)                   | HTTPStatus Exception: 429 |
-| [IDEWorkspaceChecks.plist](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist)                           | HTTPStatus Exception: 429 |
-| [WorkspaceSettings.xcsettings](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings) | HTTPStatus Exception: 429 |
-| [IDEWorkspaceChecks.plist](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist)         | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Runner</summary>
-
-| File                                                                                                                        | Summary                   |
-| ---                                                                                                                         | ---                       |
-| [Info.plist](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/Info.plist)                             | HTTPStatus Exception: 429 |
-| [AppDelegate.swift](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/AppDelegate.swift)               | HTTPStatus Exception: 429 |
-| [Runner-Bridging-Header.h](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/Runner-Bridging-Header.h) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Launchimage.imageset</summary>
-
-| File                                                                                                                                       | Summary                   |
-| ---                                                                                                                                        | ---                       |
-| [Contents.json](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Appicon.appiconset</summary>
-
-| File                                                                                                                                     | Summary                   |
-| ---                                                                                                                                      | ---                       |
-| [Contents.json](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Base.lproj</summary>
-
-| File                                                                                                                                 | Summary                   |
-| ---                                                                                                                                  | ---                       |
-| [LaunchScreen.storyboard](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/Base.lproj/LaunchScreen.storyboard) | HTTPStatus Exception: 429 |
-| [Main.storyboard](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner/Base.lproj/Main.storyboard)                 | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Flutter</summary>
-
-| File                                                                                                                     | Summary                   |
-| ---                                                                                                                      | ---                       |
-| [Release.xcconfig](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Flutter/Release.xcconfig)             | HTTPStatus Exception: 429 |
-| [Debug.xcconfig](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Flutter/Debug.xcconfig)                 | HTTPStatus Exception: 429 |
-| [AppFrameworkInfo.plist](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Flutter/AppFrameworkInfo.plist) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Runner.xcodeproj</summary>
-
-| File                                                                                                                | Summary                   |
-| ---                                                                                                                 | ---                       |
-| [project.pbxproj](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcodeproj/project.pbxproj) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Xcschemes</summary>
-
-| File                                                                                                                                       | Summary                   |
-| ---                                                                                                                                        | ---                       |
-| [Runner.xcscheme](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Project.xcworkspace</summary>
-
-| File                                                                                                                                                      | Summary                   |
-| ---                                                                                                                                                       | ---                       |
-| [contents.xcworkspacedata](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Test</summary>
-
-| File                                                                                                  | Summary                   |
-| ---                                                                                                   | ---                       |
-| [widget_test.dart](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/test/widget_test.dart) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Android</summary>
-
-| File                                                                                                   | Summary                   |
-| ---                                                                                                    | ---                       |
-| [settings.gradle](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/android/settings.gradle) | HTTPStatus Exception: 429 |
-| [build.gradle](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/android/build.gradle)       | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>App</summary>
-
-| File                                                                                                 | Summary                   |
-| ---                                                                                                  | ---                       |
-| [build.gradle](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/android/app/build.gradle) | HTTPStatus Exception: 429 |
-
-</details>
-
-<details closed><summary>Econix</summary>
-
-| File                                                                                                                                                | Summary                   |
-| ---                                                                                                                                                 | ---                       |
-| [MainActivity.kt](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/android/app/src/main/kotlin/com/envytheme/app/econix/MainActivity.kt) | HTTPStatus Exception: 429 |
-
-</details>
-
----
-
-## 🚀 Getting Started
-
-***Dependencies***
-
-Please ensure you have the following dependencies installed on your system:
-
-`- ℹ️ Flutter >= 3.7.12`
-
-`- ℹ️ Android SDK version >= 34.0.0`
-
-`- ℹ️ Java build >= 17.0.6`
-
-### 🔧 Installation
-
-1. Clone the Shop-Ecommerce-app repository and decompress it:
-
-```sh
-git clone https://github.com/jatolentino/Shop-Ecommerce-app
+After we add the training data, we need to write a function to take in a question and produce an answer based on the data:
+
+```python
+def ask(question, chat_log=None): #this first function recieves the question and uses the training data to return an answer
+	prompt_text = f"{chat_log}{restart_sequence}: {question}{start_sequence}:"
+	
+	#prompt_text is reading from our original session prompt input and and looking for the start_sequence in the inputted question
+	
+	#the next set of lines is setting the response variable to an ouput created by the Open AI API based on the training data and specifications we provide it.
+	
+	response = openai.Completion.create(
+		engine="davinci", 
+		prompt=prompt_text, #this is recieving our prompt based on the question parameter and start sequence
+		temperature=0.7, #temperature designates how creative you want the chatbot to be on a scale of 0-1
+		max_tokens=300, #max_tokens states how long the answer can be
+		top_p=1, #top_p is another creativity measure, but should be set to 1 when temperature is in use
+		frequency_penalty=0,
+		presence_penalty=0.1,
+		stop=[stop],
+	)
+ 
+ story = response["choices"][0]["text"]
+ return str(story) 
+```
+Great! We now have a function that can create an ouput for any user question. We now need to write some functions to add our response to a chatlog. We may not be using this in our basic project, but feel free to integrate the chatlog into your chatbot as a future challenge!
+
+```python
+
+def append_interaction_to_chat_log(question, answer, chat_log=None):
+    if chat_log is None: 
+        chat_log = session_prompt 
+    return f"{chat_log}{restart_sequence} {question}{start_sequence}{answer}"
+
+def root_dir():  
+    return os.path.abspath(os.path.dirname(__file__))
+
+
+def get_file(filename):  
+    try:
+        src = os.path.join(root_dir(), filename)
+        return open(src).read()
+    except IOError as exc:
+        return str(exc)
 ```
 
-2. Building the Gradle version of the Project
+We now need to create routes in flask to link our python input and output to our html page. Each route has a return value which is either a value or a Response function.
+
+```python
+app.config["SECRET_KEY"] = "generate1241235jasdaRandomstring"
+@app.route("/qoombot/answer", methods=["POST"])
+def qoom():
+ incoming_msg = request.get_json()["question"]
+ print(incoming_msg)
+ chat_log = session.get("chat_log")
+ return answer
+
+@app.route("/", methods=['GET', 'POST'])
+def home():
+    content = get_file('index.html')
+    return Response(content, mimetype="text/html")
+
+@app.route("/style.css", methods=['GET'])
+def style():
+    content = get_file('style.css')
+    return Response(content, mimetype="text/css")
+
+@app.route("/script.js", methods=['GET'])
+def scriptjs():
+    content = get_file('script.js')
+    return Response(content, mimetype="text/js")
+if __name__ == "__main__":
+ app.run(debug=True)
+```
+You can replace the string saved in ["Secret_Key"] with any random string you'd like! If your chatbot starts acting wonky, try replacing the string.
+
+We just made a route for each of the files of code we've written in order to make sure they are included in our project. If you make any more files, add a route for them too!
+
+<h2 id="javascriptconnect">3. Connect API functionality to the chatbot page with JavaScript</h2>
+
+Now, let's work on JavaScript! We will add some JavaScript inside ```<script></script>``` tags on our main html page in order to send and recieve information from the API. Place your script tags inside the html body tags.
+
+```js
+<script>
+    async function send() {
+				
+		const input = document.querySelector('input').value;
+				
+		const resp = await fetch('/qoombot/answer', {   // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+			body: JSON.stringify({question: input}),  // Converting data into a string to send to server cols="15" rows="5"
+			headers: { 'Content-Type': 'application/json'},				method: 'POST'
+		})
+				
+		const text = await resp.text();
+        const inp = document.createElement("div");
+		const div = document.createElement("div");
    
-   - Create a `Shop-Ecommerce-app.iml` file in `Shop-Ecommerce-app/android`. The file name must be equal to the root folder's name, it will be empty, don't worry!
-   - Open the folder project `Shop-Ecommerce-app` with Android Studio
-   - Don't install the dependencies with the `pub get` recommendation from Android yet, we'll do it later, be patient :D
-   - Now, go to Tools > Flutter and click on `Open Android module in Android Studio`
-   - This will open a new window, where you will see Android Studio building your gradle
-   - When the built process is completed, you will see a message suggesting to upgrade the Android Gradle plugin, do not select `Start AGP Assistant`, just proceed to close Android Studio because the project's Gradle has been built!!!
-
-3. Open the project folder `Shop-Ecommerce-app` with your favorite editor, like VS Code:
-
-   ```sh
-   cd Shop-Ecommerce-app
-   code .
-   ```
-
-> Make sure your have the flutter extensions installed in your IDE
-
-
-4. Install the dependencies:
-
-```sh
-flutter pub get
+       
+        inp.innerText="You: "+ String(input) +"\n\n";
+        document.querySelector('#textarea').appendChild(inp);
+        div.innerText="QoomBot: "+text+"\n\n";
+		document.querySelector('#textarea').appendChild(div);
+        var element = document.getElementById('textarea');
+        element.scrollTop = element.scrollHeight;
+				
+	}
+  </script> 
 ```
+A link with more information and details on async functions is included at the bottom of the page!
 
-5. Configure your android device
-
-   - Open your android device with Virtual Device Manager of Android Studio
-   - List the available android devices you have with `flutter devices` from the terminal
-   - Annotate the name of your virtual android devices, usually it has a name like `emulator-5554`
-   - Go to `./vscode` folder and open `launch.json` file
-   - Configure the name of your device in the last item object, should be like this if your device name was `emulator-554`
-      ```json
-      {
-         "name": "MyAndroid",
-         "request": "launch",
-         "type": "dart",
-         "deviceId": "emulator-5554"
-      }
-      ```
-
-
-### 🤖 Running Shop-Ecommerce-app
-
-- Go to the Run and Debug option in the Activity Bar of VS Code
-- Choose `MyAndroid` in the dropdown tab, and run the project with the play button
-
-
-### 📝 Sing in your app and generate your APK file
-
-> If you prefer to see a video explanation of this section, please go to this [link](https://www.youtube.com/watch?v=fNpoGVjhdxY)
-
-- Find your java path with:
-
-   ```sh
-   flutter doctor -v
-   ```
-
-- Extract your path from the section Android toolchain - develop for Android devices, the java path is like: `C:\Program Files\Android\Android Studio\jbr\bin\java`
-- Open up a terminal and navigate to your path but dont't conside the `\java`
-
-   ```sh
-   cd C:\Program Files\Android\Android Studio\jbr\bin
-   ```
-
-- Visit [https://docs.flutter.dev/deployment/android](https://docs.flutter.dev/deployment/android) and navigate to the section `On Windows, use the following command in PowerShell`, copy the code there and replace `%userprofile%` with a place you want to store your key, say in the folder keys on your desktop ( `C:\Users\Admin\Desktop\keys`). Execute that command in the terminal from `C:\Program Files\Android\Android Studio\jbr\bin` like:
-
-   ```sh
-   keytool -genkey -v -keystore C:\Desktop\keys\upload-keystore.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias upload
-   ```
-
-- When prompted to add your info, set your password and other information that dont matter.
-- Now, create a `key.properties` file in the `android` folder of the root project folder
-and fill out your password previously created and in the `storeFile` variable put the path where you stored your `upload-keystore.jks` key that you generated in the later step.
-
-   ```sh
-   keyAlias=upload
-   keyPassword=password
-   storeFile=C:/Desktop/keys/upload-keystore.jks
-   storePassword=password
-   ```
-> `keyAlias` is always the string upload :)
-
-- Now go to `android\app\` and open `build.gradle`, modify the section `signinConfigs` with:
-
-   ```sh
-    signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
-   ```
-- Lastly, generate the apk with a build-name and build-number that you consider is appropiate with:
-
-   ```sh
-   flutter build apk --build-name=1.0 --build-number=1
-   ```
-- Generate the Bundle app with:
-
-   ```sh
-   flutter build appbundle
-   ```
-> Find your apk in `Shop-Ecommerce-app-main\build\app\outputs\apk\release` with the name `app-release.apk` and your bundle app in `Shop-Ecommerce-app-main\build\app\outputs\bundle\release` with the name `app-release.aab`
-
-
-## 🛣 Project Roadmap
-
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Implement Y`
-> - [ ] `ℹ️ ...`
-
+<a href="#top" class="back2top">Back To Top</a>
 
 ---
 
-## 🤝 Contributing
+<h2 id="cssdesign">4.Design Chatbot with CSS</h2>
 
-Contributions are welcome! Here are several ways you can contribute:
+Now that all the chatbot functionality is complete, let's start designing the chatbot! We first need to include some libraries into our html. Add the following code to the bottom of your head element in the html file. Be sure to add the links in this order, or you may end up with loading errors!
 
-- **[Submit Pull Requests](https://github.com/jatolentino/Shop-Ecommerce-app/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
-- **[Join the Discussions](https://github.com/jatolentino/Shop-Ecommerce-app/discussions)**: Share your insights, provide feedback, or ask questions.
-- **[Report Issues](https://github.com/jatolentino/Shop-Ecommerce-app/issues)**: Submit bugs found or log feature requests for JATOLENTINO.
+```html
+  <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel="stylesheet" href="style.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+  <script src="script.js"></script>
 
-#### *Contributing Guidelines*
+```
+After we include this links, let's add a more advanced html structure to our page. Replace the previous content of the body (leave the script tags as is) with the following code:
 
-<details closed>
-<summary>Click to expand</summary>
+```html
+  <div id="chat-circle">
+        <div id="chat-overlay"></div>
+		    <i class="material-icons">question_answer</i>
+	</div>
+	<!--The div above will be the div we design to show the button circle users will click in order to see the chatbot. The next div will be the box that appears after users click the button.-->
+	
+  <div class="chat-box">
+    <div class="chat-box-header">
+      ChatBot
+      <div class="chat-box-toggle"><i class="material-icons">close</i>
+      </div>
+    </div>
+    <!--The chatbot header will include the name of the chatbot and a close sign so that users can exit the box-->
+    
+    <div class="chat-box-body">
+      <div class="chat-box-overlay">   
+      </div>
+      <div id="textarea" readonly class="chat-logs">
+      </div><!--chat-log -->
+    </div>
+    <!--The class chat-box-body is the middle of the box, where the output will apear-->
+    
+    <div class="chat-input">      
+        <input type="text" id="chat-input" name="question" placeholder="How can we help you?"/>
+      <button type="submit" class="chat-submit" id="chat-submit" value = request onclick='send()'><i class="material-icons">send</i></button>
+    </div>
+    <!--This last part of the div is where the user will enter their question, so we include an input option and a send button-->
+  </div>
 
-1. **Fork the Repository**: Start by forking the project repository to your GitHub account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a Git client.
-   ```sh
-   git clone <your-forked-repo-url>
-   ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
-   ```sh
-   git checkout -b new-feature-x
-   ```
-4. **Make Your Changes**: Develop and test your changes locally.
-5. **Commit Your Changes**: Commit with a clear and concise message describing your updates.
-   ```sh
-   git commit -m 'Implemented new feature x.'
-   ```
-6. **Push to GitHub**: Push the changes to your forked repository.
-   ```sh
-   git push origin new-feature-x
-   ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
+```
+Let's make a JavaScript File so that when the button is clicked, the chatbox pops up! We will name the file script.js.
 
-Once your PR is reviewed and approved, it will be merged into the main branch.
+```javascript
+$(function() {
+    $(document).delegate(".chat-btn", "click", function() {
+    var value = $(this).attr("chat-value");
+    var name = $(this).html();
+    $("#chat-input").attr("disabled", false);
+  })
+  
+  $("#chat-circle").click(function() {    
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+  })
+  
+  $(".chat-box-toggle").click(function() {
+    $("#chat-circle").toggle('scale');
+    $(".chat-box").toggle('scale');
+  })
+  
+})
 
-</details>
+```
+Finally, let's add some CSS! Go step by step for each div that we outlined. Here's the code for the first div, which includes the initial circle button:
+
+```css
+html, body {
+  background: #efefef;      
+  height:100%;  
+}
+
+#chat-circle {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background: #5A5EB9;
+  width: 80px;
+  height: 80px;  
+  border-radius: 50%;
+  padding: 28px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+```
+We set cursor to pointer in order to indicate when to the user that they are hovering over a button. The box shadow also helps draw attention to the button in the corner.
+
+Great! We've completed the basic design for the circle button users will click to access the chatbot. Let's break down the second div now, which is the header, body, and input.
+
+First, let's design the header and the response to our JavaScript toggle function.
+
+```css
+
+.chat-box-header {
+  background: #5A5EB9;
+  height:70px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px; 
+  color:white;
+  text-align:center;
+  font-size:20px;
+  padding-top:17px;
+}
+
+.chat-box-toggle {
+  float:right;
+  margin-right:15px;
+  cursor:pointer;
+}
+```
+Next, we want to design the body of the chatbot. This includes the chatlogs, which stores the previous values in the div and helps us scroll through the responses.
+
+```css
+
+#chat-overlay {
+    background: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: none;
+}
+
+.chat-box {
+  display:none;
+  background: #efefef;
+  position:fixed;
+  right:30px;
+  bottom:50px;  
+  width:350px;
+  max-width: 85vw;
+  max-height:100vh;
+  border-radius:5px;  
+/*   box-shadow: 0px 5px 35px 9px #464a92; */
+  box-shadow: 0px 5px 35px 9px #ccc;
+}
+
+.chat-box-body {
+  position: relative;  
+  height:370px;  
+  height:auto;
+  border:1px solid #ccc;  
+  overflow: hidden;
+}
+.chat-box-body:after {
+  content: "";
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height:100%;
+  position: absolute;
+  z-index: -1;   
+}
+
+.chat-logs {
+  padding:15px; 
+  height:370px;
+  overflow-y:scroll;
+}
+
+.chat-logs::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.chat-logs::-webkit-scrollbar
+{
+	width: 10px;  
+	background-color: #F5F5F5;
+}
+
+.chat-logs::-webkit-scrollbar-thumb
+{
+	background-color: #5A5EB9;
+}
+
+@media only screen and (max-width: 500px) {
+   .chat-logs {
+        height:40vh;
+    }
+}
+```
+The overflow-y: scroll element allows users to scroll through past chatlogs even if they go past the size of the chatbot window.
+
+Finally, let's design the input div! We will design both the input box and the submit button.
+
+```css
+#chat-input {
+  background: #f4f7f9;
+  width:100%; 
+  position:relative;
+  height:47px;  
+  padding: 10px, 50px, 10px, 20px;
+  resize:none;
+  outline:none;
+  border:1px solid #ccc;
+  color:#888;
+  border-top:none;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  overflow:hidden;  
+}
+.chat-input > form {
+    margin-bottom: 0;
+}
+#chat-input::-webkit-input-placeholder { 
+  color: #ccc;
+}
+.chat-submit {  
+  position:absolute;
+  bottom:3px;
+  right:10px;
+  background: transparent;
+  box-shadow:none;
+  border:none;
+  border-radius:50%;
+  color:#5A5EB9;
+  width:35px;
+  height:35px;  
+}
+```
+The chatbox-body:after indicates the new design of the chatbox once the chatbot circle is clicked. Beforehand, the chatbox is hidden. 
+
+Now we are done!
 
 ---
 
-## 📄 License
+## Resources:
+>1.  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">JavaScript Async Functions/Fetch API</a> 
+>2. <a href="https://codepen.io/shivapandey/pen/dWdRYM">CSS Design</a>
 
+## Challenges:
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-## 👏 Acknowledgments
-
-- List any resources, contributors, inspiration, etc. here.
-
-[**Return**](#Top)
-
----
-
+> 1. Add profile pictures for both the user and qoombot! Try and get each response to stick to the correct side of the app window. 
+> 2. Add a feature using the chatlog function in python (hint: research rendering pages instead of returning values)
+>3. Add the question-answer data in a text file, add more data, and try opening the file through python.
