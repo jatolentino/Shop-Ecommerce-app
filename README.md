@@ -107,77 +107,344 @@ Flutter mobile application project compatible with Android and iOS devices, it c
 ## 📂 Repository Structure
 
 ```sh
-└── Shop-Ecommerce-app/
-    ├── .metadata
-    ├── android/
-    │   ├── app/
-    │   │   ├── build.gradle
-    │   │   └── src/
-    │   ├── build.gradle
-    │   ├── gradle/
-    │   │   └── wrapper/
-    │   ├── settings.gradle
-    │   └── upload-keystore.jks
-    ├── ios/
-    │   ├── Flutter/
-    │   │   ├── AppFrameworkInfo.plist
-    │   │   ├── Debug.xcconfig
-    │   │   └── Release.xcconfig
-    │   ├── Runner/
-    │   │   ├── AppDelegate.swift
-    │   │   ├── Assets.xcassets/
-    │   │   ├── Base.lproj/
-    │   │   ├── Info.plist
-    │   │   └── Runner-Bridging-Header.h
-    │   ├── Runner.xcodeproj/
-    │   │   ├── project.pbxproj
-    │   │   ├── project.xcworkspace/
-    │   │   └── xcshareddata/
-    │   └── Runner.xcworkspace/
-    │       ├── contents.xcworkspacedata
-    │       └── xcshareddata/
-    ├── lib/
-    │   ├── config/
-    │   │   └── routes/
-    │   ├── constants/
-    │   │   ├── api_path.dart
-    │   │   ├── app_color.dart
-    │   │   ├── app_constants.dart
-    │   │   ├── app_text.dart
-    │   │   ├── assets_path.dart
-    │   │   └── size.dart
-    │   ├── core/
-    │   │   └── auth/
-    │   ├── main.dart
-    │   ├── module/
-    │   │   ├── controller/
-    │   │   ├── model/
-    │   │   └── view/
-    │   ├── utils/
-    │   │   ├── helper/
-    │   │   └── service/
-    │   └── widgets/
-    │       ├── account_text.dart
-    │       ├── action_icon.dart
-    │       ├── bottom_nav.dart
-    │       ├── custom_app_bar.dart
-    │       ├── custom_button.dart
-    │       ├── header_text.dart
-    │       ├── heading_text.dart
-    │       ├── loading_indicator.dart
-    │       ├── menu_drawer.dart
-    │       ├── product_item.dart
-    │       ├── search_delegate.dart
-    │       ├── search_field.dart
-    │       └── search_screen.dart
-    ├── pubspec.lock
-    ├── pubspec.yaml
-    ├── test/
-    │   └── widget_test.dart
-    └── web/
-        ├── icons/
-        ├── index.html
-        └── manifest.json
+└──Shop-EcommerceShop-Ecommerce-app
+	├── android
+	│   ├── app
+	│   │   ├── build.gradle
+	│   │   └── src
+	│   │       ├── debug
+	│   │       │   └── AndroidManifest.xml
+	│   │       ├── main
+	│   │       │   ├── AndroidManifest.xml
+	│   │       │   ├── kotlin
+	│   │       │   │   └── com
+	│   │       │   │       └── envytheme
+	│   │       │   │           └── app
+	│   │       │   │               └── econix
+	│   │       │   │                   └── MainActivity.kt
+	│   │       │   └── res
+	│   │       │       ├── drawable
+	│   │       │       │   └── launch_background.xml
+	│   │       │       ├── drawable-v21
+	│   │       │       │   └── launch_background.xml
+	│   │       │       ├── mipmap-hdpi
+	│   │       │       │   ├── app_icon.png
+	│   │       │       │   └── ic_launcher.png
+	│   │       │       ├── mipmap-ldpi
+	│   │       │       │   └── app_icon.png
+	│   │       │       ├── mipmap-mdpi
+	│   │       │       │   ├── app_icon.png
+	│   │       │       │   └── ic_launcher.png
+	│   │       │       ├── mipmap-xhdpi
+	│   │       │       │   ├── app_icon.png
+	│   │       │       │   └── ic_launcher.png
+	│   │       │       ├── mipmap-xxhdpi
+	│   │       │       │   ├── app_icon.png
+	│   │       │       │   └── ic_launcher.png
+	│   │       │       ├── mipmap-xxxhdpi
+	│   │       │       │   ├── app_icon.png
+	│   │       │       │   └── ic_launcher.png
+	│   │       │       ├── values
+	│   │       │       │   └── styles.xml
+	│   │       │       └── values-night
+	│   │       │           └── styles.xml
+	│   │       └── profile
+	│   │           └── AndroidManifest.xml
+	│   ├── build.gradle
+	│   ├── gradle
+	│   │   └── wrapper
+	│   │       └── gradle-wrapper.properties
+	│   ├── gradle.properties
+	│   ├── settings.gradle
+	│   └── upload-keystore.jks
+	├── app-logo.jpg
+	├── assets
+	│   ├── icons
+	│   │   ├── about.svg
+	│   │   ├── accessories-fill.svg
+	│   │   ├── accessories.svg
+	│   │   ├── back-arrow.svg
+	│   │   ├── bag.svg
+	│   │   ├── battery-fill.svg
+	│   │   ├── battery.svg
+	│   │   ├── camera-fill.svg
+	│   │   ├── camera.svg
+	│   │   ├── cart-fill.svg
+	│   │   ├── cart-icon.svg
+	│   │   ├── cat-fill.svg
+	│   │   ├── cat.svg
+	│   │   ├── conditions.svg
+	│   │   ├── desktop-fill.svg
+	│   │   ├── desktop.svg
+	│   │   ├── email-icon.svg
+	│   │   ├── headphone-fill.svg
+	│   │   ├── headphones.svg
+	│   │   ├── heart-fill.svg
+	│   │   ├── heart-icon.svg
+	│   │   ├── home-fill.svg
+	│   │   ├── home.svg
+	│   │   ├── laptop-fill.svg
+	│   │   ├── laptop.svg
+	│   │   ├── lock.svg
+	│   │   ├── login.svg
+	│   │   ├── logoImg.svg
+	│   │   ├── logout.svg
+	│   │   ├── menu-icon.svg
+	│   │   ├── mobile-fill.svg
+	│   │   ├── mobile.svg
+	│   │   ├── name.svg
+	│   │   ├── order-icon.svg
+	│   │   ├── phone.svg
+	│   │   ├── products.svg
+	│   │   ├── profile-fill.svg
+	│   │   ├── profile.svg
+	│   │   ├── search-icon.svg
+	│   │   ├── share-icon.svg
+	│   │   ├── star.svg
+	│   │   ├── stereo-fill.svg
+	│   │   ├── stereo.svg
+	│   │   ├── store-fill.svg
+	│   │   ├── store.svg
+	│   │   ├── tick-square.svg
+	│   │   ├── tv-box.svg
+	│   │   ├── tv-fill.svg
+	│   │   ├── uk-flag.svg
+	│   │   ├── username.svg
+	│   │   ├── watch-fill.svg
+	│   │   └── watch.svg
+	│   └── images
+	│       ├── about-img.png
+	│       ├── airpod.jpg
+	│       ├── avatar.jpg
+	│       ├── banner-1.jpg
+	│       ├── banner-2.jpg
+	│       ├── banner-3.jpg
+	│       ├── banner-4a.jpg
+	│       ├── banner-4.jpg
+	│       ├── banner-5a.jpg
+	│       ├── banner-5.jpg
+	│       ├── banner-6a.jpg
+	│       ├── banner-6.jpg
+	│       ├── camera1.jpg
+	│       ├── camera2.jpg
+	│       ├── camera3.jpg
+	│       ├── cctv.jpg
+	│       ├── condition-img.png
+	│       ├── featur4.jpg
+	│       ├── feature1.jpg
+	│       ├── feature2.jpg
+	│       ├── feature3.jpg
+	│       ├── feature5.jpg
+	│       ├── feature6.jpg
+	│       ├── featureclothe.jpg
+	│       ├── featurefreezer.jpg
+	│       ├── featuretable.jpg
+	│       ├── feature-table.png
+	│       ├── headphone1.jpg
+	│       ├── headphone2.jpg
+	│       ├── headphone3.jpg
+	│       ├── headphone4.jpg
+	│       ├── headphone5.jpg
+	│       ├── headphone6.jpg
+	│       ├── keyboard1.jpg
+	│       ├── keyboard2.jpg
+	│       ├── keyboard3.jpg
+	│       ├── laptop1.jpg
+	│       ├── laptop2.jpg
+	│       ├── laptop3.jpg
+	│       ├── laptop4.jpg
+	│       ├── lcd.jpg
+	│       ├── lens2.jpg
+	│       ├── lens.jpg
+	│       ├── logoImg2.png
+	│       ├── logoImg2.svg
+	│       ├── logoImg.svg
+	│       ├── macbook.jpg
+	│       ├── microphone.jpg
+	│       ├── mouse.jpg
+	│       ├── playstation.jpg
+	│       ├── projector.jpg
+	│       ├── speaker.jpg
+	│       ├── splash.gif
+	│       ├── splash.mp4
+	│       ├── splash.png
+	│       ├── text74895.png
+	│       ├── uk-flag.png
+	│       ├── watch2.jpg
+	│       ├── watch3.jpg
+	│       └── watch.jpg
+	├── ios
+	│   ├── Flutter
+	│   │   ├── AppFrameworkInfo.plist
+	│   │   ├── Debug.xcconfig
+	│   │   └── Release.xcconfig
+	│   ├── Runner
+	│   │   ├── AppDelegate.swift
+	│   │   ├── Assets.xcassets
+	│   │   │   ├── AppIcon.appiconset
+	│   │   │   │   ├── Contents.json
+	│   │   │   │   ├── Icon-App-1024x1024@1x.png
+	│   │   │   │   ├── Icon-App-20x20@1x.png
+	│   │   │   │   ├── Icon-App-20x20@2x.png
+	│   │   │   │   ├── Icon-App-20x20@3x.png
+	│   │   │   │   ├── Icon-App-29x29@1x.png
+	│   │   │   │   ├── Icon-App-29x29@2x.png
+	│   │   │   │   ├── Icon-App-29x29@3x.png
+	│   │   │   │   ├── Icon-App-40x40@1x.png
+	│   │   │   │   ├── Icon-App-40x40@2x.png
+	│   │   │   │   ├── Icon-App-40x40@3x.png
+	│   │   │   │   ├── Icon-App-60x60@2x.png
+	│   │   │   │   ├── Icon-App-60x60@3x.png
+	│   │   │   │   ├── Icon-App-76x76@1x.png
+	│   │   │   │   ├── Icon-App-76x76@2x.png
+	│   │   │   │   └── Icon-App-83.5x83.5@2x.png
+	│   │   │   └── LaunchImage.imageset
+	│   │   │       ├── Contents.json
+	│   │   │       ├── LaunchImage@2x.png
+	│   │   │       ├── LaunchImage@3x.png
+	│   │   │       ├── LaunchImage.png
+	│   │   │       └── README.md
+	│   │   ├── Base.lproj
+	│   │   │   ├── LaunchScreen.storyboard
+	│   │   │   └── Main.storyboard
+	│   │   ├── Info.plist
+	│   │   └── Runner-Bridging-Header.h
+	│   ├── Runner.xcodeproj
+	│   │   ├── project.pbxproj
+	│   │   ├── project.xcworkspace
+	│   │   │   ├── contents.xcworkspacedata
+	│   │   │   └── xcshareddata
+	│   │   │       ├── IDEWorkspaceChecks.plist
+	│   │   │       └── WorkspaceSettings.xcsettings
+	│   │   └── xcshareddata
+	│   │       └── xcschemes
+	│   │           └── Runner.xcscheme
+	│   └── Runner.xcworkspace
+	│       ├── contents.xcworkspacedata
+	│       └── xcshareddata
+	│           ├── IDEWorkspaceChecks.plist
+	│           └── WorkspaceSettings.xcsettings
+	├── lib
+	│   ├── config
+	│   │   └── routes
+	│   │       └── app_route.dart
+	│   ├── constants
+	│   │   ├── api_path.dart
+	│   │   ├── app_color.dart
+	│   │   ├── app_constants.dart
+	│   │   ├── app_text.dart
+	│   │   ├── assets_path.dart
+	│   │   └── size.dart
+	│   ├── core
+	│   │   └── auth
+	│   │       ├── login.dart
+	│   │       └── register.dart
+	│   ├── main.dart
+	│   ├── module
+	│   │   ├── controller
+	│   │   │   ├── app_controller.dart
+	│   │   │   ├── auth_controller.dart
+	│   │   │   ├── base_controller.dart
+	│   │   │   ├── cart_controller.dart
+	│   │   │   └── data_controller.dart
+	│   │   ├── model
+	│   │   │   ├── banner_model.dart
+	│   │   │   ├── category_model.dart
+	│   │   │   ├── checkout_model.dart
+	│   │   │   ├── my_order_model.dart
+	│   │   │   ├── product_model.dart
+	│   │   │   └── user_model.dart
+	│   │   └── view
+	│   │       ├── about_&_conditons
+	│   │       │   ├── about.dart
+	│   │       │   └── conditions.dart
+	│   │       ├── cart
+	│   │       │   ├── cart.dart
+	│   │       │   └── components
+	│   │       │       ├── billing_address.dart
+	│   │       │       ├── cart_list.dart
+	│   │       │       ├── counter.dart
+	│   │       │       └── total_checkout.dart
+	│   │       ├── category
+	│   │       │   ├── category.dart
+	│   │       │   └── components
+	│   │       │       ├── category_tab.dart
+	│   │       │       └── category_tab_items.dart
+	│   │       ├── home
+	│   │       │   ├── components
+	│   │       │   │   ├── banner_slider.dart
+	│   │       │   │   ├── best_seller.dart
+	│   │       │   │   ├── feature_list.dart
+	│   │       │   │   ├── flash_sale.dart
+	│   │       │   │   └── special_product.dart
+	│   │       │   └── home_page.dart
+	│   │       ├── landing_page.dart
+	│   │       ├── order
+	│   │       │   ├── components
+	│   │       │   │   ├── order_item.dart
+	│   │       │   │   └── order_title.dart
+	│   │       │   └── order_screen.dart
+	│   │       ├── prodcut_details
+	│   │       │   ├── components
+	│   │       │   │   ├── info_with_button.dart
+	│   │       │   │   ├── placeholder.dart
+	│   │       │   │   ├── recommened_product.dart
+	│   │       │   │   └── review.dart
+	│   │       │   └── details_page.dart
+	│   │       ├── products
+	│   │       │   ├── components
+	│   │       │   │   ├── product_tab.dart
+	│   │       │   │   └── product_tab_items.dart
+	│   │       │   └── products.dart
+	│   │       ├── profile
+	│   │       │   └── profile.dart
+	│   │       ├── splash.dart
+	│   │       └── wishlist
+	│   │           ├── components
+	│   │           │   └── wish_list.dart
+	│   │           └── wish_page.dart
+	│   ├── utils
+	│   │   ├── helper
+	│   │   │   ├── bindings.dart
+	│   │   │   ├── dialog.dart
+	│   │   │   ├── exception.dart
+	│   │   │   ├── loader.dart
+	│   │   │   └── show_snack.dart
+	│   │   └── service
+	│   │       ├── api
+	│   │       │   ├── auth_service.dart
+	│   │       │   ├── checkout.dart
+	│   │       │   └── product_service.dart
+	│   │       └── payment
+	│   │           └── payment.dart
+	│   └── widgets
+	│       ├── account_text.dart
+	│       ├── action_icon.dart
+	│       ├── bottom_nav.dart
+	│       ├── custom_app_bar.dart
+	│       ├── custom_button.dart
+	│       ├── header_text.dart
+	│       ├── heading_text.dart
+	│       ├── loading_indicator.dart
+	│       ├── menu_drawer.dart
+	│       ├── product_item.dart
+	│       ├── search_delegate.dart
+	│       ├── search_field.dart
+	│       └── search_screen.dart
+	├── LICENSE
+	├── pubspec.lock
+	├── pubspec.yaml
+	├── README.md
+	├── test
+	│   └── widget_test.dart
+	└── web
+		├── favicon.png
+		├── icons
+		│   ├── Icon-192.png
+		│   └── Icon-512.png
+		├── index.html
+		└── manifest.json
+
 
 ```
 
