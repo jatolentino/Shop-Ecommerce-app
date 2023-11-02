@@ -22,7 +22,7 @@
             "flutterMode": "release"
         },
         {
-            "name": "Android",
+            "name": "MyAndroid",
             "request": "launch",
             "type": "dart",
             "deviceId": "emulator-5554"
