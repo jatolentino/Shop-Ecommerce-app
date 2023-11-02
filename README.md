@@ -34,6 +34,12 @@ Compatible with Android & iOS devices</h3>
 
 ---
 
+
+https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/8d4d85aa-13c7-48c6-89ca-9d7a8447e31b
+
+
+---
+
 ## 📖 Table of Contents
 - [📖 Table of Contents](#-table-of-contents)
 - [📍 Overview](#-overview)
