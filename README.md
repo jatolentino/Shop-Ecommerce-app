@@ -1,9 +1,11 @@
 <div align="center">
 <h1 align="center">
-<img src="https://raw.githubusercontent.com/jatolentino/Shop-Ecommerce/main/logo.svg"  style="border-radius: 20px; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;" width="100" />
+<img src="https://raw.githubusercontent.com/jatolentino/Shop-Ecommerce/main/logo.svg" width="100" />
 <br>SHOP APP</h1>
-<img src="https://svgshare.com/i/z3H.svg" height="30" ><a href="https://drive.usercontent.google.com/download?id=1aYbu_jfjn-nUALQL96oychs_HDYic6dg&export=download&authuser=0&confirm=t&uuid=29eb1889-dc44-418a-b7d5-2cd34726e419&at=APZUnTV9atPPiL7Rn5O6yNi6ZAmE:1698640911138"></a> </img>
-<img src="https://svgshare.com/i/z5J.svg" height="30" />
+
+[<img src="https://svgshare.com/i/z3H.svg" height="30">](https://drive.usercontent.google.com/download?id=1aYbu_jfjn-nUALQL96oychs_HDYic6dg&export=download&authuser=0&confirm=t&uuid=29eb1889-dc44-418a-b7d5-2cd34726e419&at=APZUnTV9atPPiL7Rn5O6yNi6ZAmE:1698640911138) [<img src="https://svgshare.com/i/z5J.svg" height="30">](https://drive.usercontent.google.com/download?id=1aYbu_jfjn-nUALQL96oychs_HDYic6dg&export=download&authuser=0&confirm=t&uuid=29eb1889-dc44-418a-b7d5-2cd34726e419&at=APZUnTV9atPPiL7Rn5O6yNi6ZAmE:1698640911138) 
+
+
 <h3>Buy anytime you want!<br>
 Pay with any credit or debit card<br>
 Compatible with Android & iOS devices</h3>
