@@ -34,10 +34,21 @@ Compatible with Android & iOS devices</h3>
 
 
 </p>
+
+<p>
+
+![GitHub repo size](https://img.shields.io/github/repo-size/jatolentino/Shop-Ecommerce-app)
+![GitHub language count](https://img.shields.io/github/languages/count/jatolentino/Shop-Ecommerce-app?color=success&logo=CodersRank&logoColor=%23FFFFFF)
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+![rating](https://img.shields.io/badge/rating-★★★★★-yellow)
+![uptime](https://img.shields.io/badge/uptime-99.99%25-green) \
 <img src="https://img.shields.io/github/license/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="GitHub license" />
 <img src="https://img.shields.io/github/last-commit/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="git-last-commit" />
 <img src="https://img.shields.io/github/commit-activity/m/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="GitHub commit activity" />
 <img src="https://img.shields.io/github/languages/top/jatolentino/Shop-Ecommerce-app?style=flat-square&color=5D6D7E" alt="GitHub top language" />
+
+</p>
+
 </div>
 
 ---
