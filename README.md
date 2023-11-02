@@ -43,7 +43,7 @@ Compatible with Android & iOS devices</h3>
 ---
 
 
-https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/8d4d85aa-13c7-48c6-89ca-9d7a8447e31b
+https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/a513ee14-87e0-4a33-88ef-1e37d2349b72
 
 
 ---
