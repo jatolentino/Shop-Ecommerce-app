@@ -56,7 +56,7 @@ Compatible with Android & iOS devices</h3>
 
 ![GiF-APP](https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/4534701c-315b-42d1-888b-03dbff169857)
 
-https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/a513ee14-87e0-4a33-88ef-1e37d2349b72
+https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/497b91a6-79a0-461e-983b-10a42d15ed17
 
 
 ---
