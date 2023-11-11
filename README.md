@@ -54,7 +54,7 @@ Compatible with Android & iOS devices</h3>
 
 ---
 
-<div align="center
+<div align="center>
 
 
 ![shop-phone-c](https://github.com/jatolentino/Shop-Ecommerce-app/assets/61167951/11d47e62-9b33-40f5-9f09-7c8731c72055)
